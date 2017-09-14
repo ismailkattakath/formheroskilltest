@@ -16,7 +16,9 @@
     "url": "https://github.com/formhero/skills-front-end-developer/issues"
   },
   "homepage": "https://github.com/formhero/skills-front-end-developer#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
   "devDependencies": {
     "express": "^4.15.4",
     "glob": "^7.1.2",

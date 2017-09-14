@@ -1,0 +1,30 @@
+div[fh-date-input] {
+  button {
+    color: white;
+    background: rgb(63, 81, 181);
+    border: 0px;
+    height: 30px;
+    margin-left: -5px;
+    border-radius: 0px 10px 10px 0px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+  }
+  input {
+    height: 25px;
+    border: 2px solid rgb(63, 81, 181);
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  .error {
+    color: #cc0000;
+    font-weight: bold;
+  }
+  .error_input {
+    border: 2px solid #cc0000;
+  }
+  .error_button {
+    background: #cc0000;
+  }
+}

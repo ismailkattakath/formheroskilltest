@@ -1,0 +1,7 @@
+<div class="input-group" id="jqDatePicker">
+   <input ng-class="{error_input: fhRequired && !ngModel}" type="text" class="form-control" placeholder="{{placeholder}}" id="jqdatepicker-textbox">
+   <input ng-class="{error_input: fhRequired && !ngModel}" type="hidden" class="form-control" placeholder="{{placeholder}}" id="jqdatepicker-alternate" ng-model="ngModel">
+   <span class="input-group-btn">
+   <button ng-class="{error_button: fhRequired && !ngModel}" class="btn btn-default" type="button" id="jqdatepicker-btn">CALENDAR</button>
+   </span><span class="error" ng-show="{{fhRequired && !ngModel}}" ng-hide="ngModel || !fhRequired">REQUIRED!</span>
+</div>
