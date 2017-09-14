@@ -30,6 +30,7 @@ angular.module('skillsLab').directive('fhDateInput', function ($timeout) {
     };
     directive.compile = function (element, attributes) {
         var linkFunction = function ($scope, element, attributes) {
+
             var jqdatepickerTextboxId = 'jqdatepicker-textbox-' + uniqueId;
             var jqdatepickerAlternateId = 'jqdatepicker-alternate-' + uniqueId;
             var jqdatepickerBtnId = 'jqdatepicker-btn-' + uniqueId;
@@ -37,6 +38,7 @@ angular.module('skillsLab').directive('fhDateInput', function ($timeout) {
             $('#jqdatepicker-alternate').attr('id', jqdatepickerAlternateId);
             $('#jqdatepicker-btn').attr('id', jqdatepickerBtnId);
             uniqueId++;
+
             $("#" + jqdatepickerTextboxId).datepicker({
                 dateFormat: $scope.displayFormat,
                 altField: "#" + jqdatepickerAlternateId,
@@ -46,7 +48,6 @@ angular.module('skillsLab').directive('fhDateInput', function ($timeout) {
                 minDate: $scope.fhMinDate,
                 maxDate: $scope.fhMaxDate,
                 yearRange: $scope.yearRange,
-                defaultDate: null,
                 onSelect: function (date, obj) {
                     $timeout(function () {
                         $scope.ngModel = $("#" + jqdatepickerAlternateId).val();
@@ -60,9 +61,15 @@ angular.module('skillsLab').directive('fhDateInput', function ($timeout) {
                     });
                 }
             }).datepicker("setDate", new Date($scope.ngModel));
+
             $('#' + jqdatepickerBtnId).click(function () {
                 $('#' + jqdatepickerTextboxId).datepicker("show");
             });
+
+            if(!$scope.ngModel){
+                $("#" + jqdatepickerTextboxId).datepicker('setDate', null);
+            }
+
         };
         return linkFunction;
     };
